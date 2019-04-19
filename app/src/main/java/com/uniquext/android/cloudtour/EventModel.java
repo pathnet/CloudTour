@@ -1,10 +1,6 @@
 package com.uniquext.android.cloudtour;
 
-import android.content.pm.ActivityInfo;
-import android.os.Bundle;
-
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import com.amap.api.maps.model.LatLng;
 
 /**
  * 　 　　   へ　　　 　／|
@@ -24,25 +20,37 @@ import androidx.appcompat.app.AppCompatActivity;
  *
  * @author UniqueXT
  * @version 1.0
- * @date 2019/4/18  10:33
+ * @date 2019/4/19  16:10
  */
-public abstract class BaseActivity extends AppCompatActivity {
+public class EventModel {
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        setContentView(getLayoutId());
-        initView();
-        initData(savedInstanceState);
-        initEvent();
+
+
+    private int code;
+    private LatLng latLng;
+
+    public EventModel(int code) {
+        this(code, null);
     }
 
-    protected abstract int getLayoutId();
+    public EventModel(int code, LatLng latLng) {
+        this.code = code;
+        this.latLng = latLng;
+    }
 
-    protected abstract void initView();
+    public int getCode() {
+        return code;
+    }
 
-    protected abstract void initData(Bundle savedInstanceState);
+    public void setCode(int code) {
+        this.code = code;
+    }
 
-    protected abstract void initEvent();
+    public LatLng getLatLng() {
+        return latLng;
+    }
+
+    public void setLatLng(LatLng latLng) {
+        this.latLng = latLng;
+    }
 }

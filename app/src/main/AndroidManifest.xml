@@ -3,6 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.uniquext.android.cloudtour">
 
+    <!--模拟定位-->
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
     <!--地图SDK（包含其搜索功能）需要的基础权限-->
     <!--允许程序打开网络套接字-->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -32,12 +36,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MapActivity" />
+        <activity android:name=".map.MapActivity" />
 
         <meta-data
             android:name="com.amap.api.v2.apikey"
             android:value="d3353024c7168040079b660a664dc138" />
 
+        <service android:name=".service.FakeService" />
     </application>
 
 

@@ -6,6 +6,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.uniquext.android.cloudtour.map.MapActivity;
 import com.uniquext.android.lightpermission.LightPermission;
 import com.uniquext.android.lightpermission.PermissionCallback;
 
@@ -19,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         LightPermission.with(this)
-                .permissions(Manifest.permission.ACCESS_COARSE_LOCATION)
+                .permissions(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION)
                 .result(new PermissionCallback() {
                     @Override
                     public void onGranted() {

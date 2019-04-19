@@ -29,23 +29,31 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.1.0-alpha04'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha4'
+    implementation 'com.google.android.material:material:1.0.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0-alpha03'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0-alpha03'
 
     //  权限
     implementation "com.uniquext.android:permission:2.0.0-SNAPSHOT"
+    //  事件总线
+    implementation 'org.greenrobot:eventbus:3.1.1'
 
     //  3D地图
     implementation 'com.amap.api:3dmap:6.8.0'
     //  搜索
     implementation 'com.amap.api:search:6.5.0.1'
     //  定位
-    implementation 'com.amap.api:location:4.5.1'
+//    implementation 'com.amap.api:location:4.5.1'
 }
